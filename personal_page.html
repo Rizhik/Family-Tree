@@ -1,8 +1,143 @@
 <html>
 <head>
+	<link rel="stylesheet" href="css-style.css">
 	<title>Personal Page - FIO </title>
+	 <meta charset="UTF-8"> 
 </head>
 <body>
-<img src="/Photo/Portret.jpg" alt="Photo" style="width:304px;height:228px">
+
+	<div id="header">
+	<h1>Personal Card</h1>
+	</div>
+
+<div>
+	<div class="Photo" style="float:left; padding:50px;">
+		<img src="photo/Portret.jpg" alt="Photo" />
+	</div>
+
+	<div class="PesronalInfo" style="float:left; padding:50px;">
+		<table border="1">
+					<tr>
+						<td>Last Name</td>
+						<td>Smith</td>	
+
+					</tr>
+					<tr>
+						<td>First Name</td>
+						<td>Jane</td>
+					</tr>
+					<tr>
+						<td>Middle Name</td>
+						<td>Ivanovna</td>
+					</tr>
+					<tr>
+						<td>Years</td>
+						<td>1954-1957</td>
+					</tr>
+					<tr>
+						<td>Place of birth</td>
+						<td>Kharkiv</td>
+				        <td><button>Map</button></td>
+					</tr>
+					<tr>
+						<td>Curent Address</td>
+						<td>Moscow</td>
+						<td><button>Map</button></td>
+					</tr>
+					<tr>
+						<td>Place of Death</td>
+						<td>_EMPTY_</td>
+			            <td><button>Map</button></td>
+					</tr>
+
+				</table>
+	</div>
+
+</div>
+
+
+<div style="clear:both">
+<article class="tabs">
+
+	<section id="tab1">
+		<h2><a href="#tab1">Biography</a></h2>
+		
+		<div>
+
+			<h3>Biography</h3>
+			<p>Some simple text about this person</p>
+			<hr>
+		</div>
+		<div>
+			<h3>Test</h3>
+			<table border="1">
+					<tr>
+						<td>Mother</td>
+						<td>Sidorenko Ann</td>
+					</tr>
+					<tr>
+						<td>Father</td>
+						<td>Smith Tom</td>
+					</tr>
+					<tr>
+						<td>Brothers and/or sisters</td>
+						<td>Jack, Alex, Kate</td>
+					</tr>
+					<tr>
+						<td>Wife or Husband</td>
+						<td>Tim Clouth</td>
+					</tr>
+					<tr>
+						<td>Children</td>
+						<td>Oliv</td>
+					</tr>
+				</table>
+		</div>
+		
+	</section>
+	
+	<section id="tab2">
+		<h2><a href="#tab2">Tree</a></h2>
+		<p>This content appears on tab 2.</p>
+	</section>
+	
+	<section id="tab3">
+		<h2><a href="#tab3">Life Map</a></h2>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="scripts/google-map-script.js"></script>
+		<div id="map-canvas"></div>
+	</section>
+
+	<section id="tab4">
+		<h2><a href="#tab4">Photo Galary</a></h2>
+		<table style="width:194px;">
+			<tr>
+				<td align="center" style="height:194px;background:url(https://www.gstatic.com/pwa/s/v/lighthousefe_20150520.00_p0/transparent_album_background.gif) no-repeat left">
+					<a href="https://picasaweb.google.com/100845380512321282990/bRQnCC?authuser=0&feat=embedwebsite">
+						<img src="https://lh3.googleusercontent.com/-ZwkuJIIfwSk/ThE5aBDLP_E/AAAAAAAAPeU/LpGGXZlmlic/s160-c/bRQnCC.jpg" width="160" height="160" style="margin:1px 0 0 4px;">
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:center;font-family:arial,sans-serif;font-size:11px">
+					<a href="https://picasaweb.google.com/100845380512321282990/bRQnCC?authuser=0&feat=embedwebsite" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">Ограничиваю доступ к альбомам! Подробнее внутри</a>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+		<section id="tab5">
+		<h2><a href="#tab5">Documents</a></h2>
+		<p>This content appears on tab 5.</p>
+	</section>
+
+</article>	
+	<div class="EditButtons">
+		<button onclick="myFunction()">Print</button>
+		<script src="scripts/print.js"></script>
+		<button>Edit</button>
+		<button>Delete</button>
+	</div>
+</div>
 </body>
 </html>
