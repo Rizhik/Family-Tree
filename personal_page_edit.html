@@ -2,51 +2,80 @@
 <head>
 	<link rel="stylesheet" href="css/css-style.css">
 	<title>Personal Page - FIO </title>
-	 <meta charset="UTF-8"> 
+	<meta charset="UTF-8"> 
+
+
+
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 </head>
 <body>
 
 	<div id="header">
-	<h1>Personal Card</h1>
+	<h1>Personal Card - <span style="color: red">EDIT</span></h1>
 	</div>
 
 <div>
 	<div class="Photo" style="float:left; padding:50px;">
-		<img src="photo/Portret.jpg" alt="Photo" />
+		<div><img src="photo/Portret.jpg" alt="Photo" /></div>
+		<div>
+    		<p>Select image to upload:<p>
+    		<input type="file" name="fileToUpload" id="fileToUpload">
+    		<input type="submit" value="Upload Image" name="submit">
+		</div>
 	</div>
 
 	<div class="PesronalInfo" style="float:left; padding:50px;">
 		<table border="1">
 					<tr>
 						<td>Last Name</td>
-						<td>Smith</td>	
+						<td><input type="text" name="lastName"></td>	
 
 					</tr>
 					<tr>
 						<td>First Name</td>
-						<td>Jane</td>
+						<td><input type="text" name="firstName"></td>
 					</tr>
 					<tr>
 						<td>Middle Name</td>
-						<td>Ivanovna</td>
+						<td><input type="text" name="middleName"></td>
 					</tr>
 					<tr>
 						<td>Years</td>
-						<td>1954-1957</td>
+						<td>
+							
+								<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  								<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  								<script>$(function() {$( "#datepicker_birth" ).datepicker();});</script>
+  								<input type="text" id="datepicker_birth" value="1850-01-01">
+						</td>
+						<td>
+  							<script>$(function() {$( "#datepicker_death" ).datepicker();});</script>
+
+  							<input type="text" id="datepicker_death" >
+  							<script>document.getElementById('datepicker_death').value = new Date().toISOString().substring(0, 10);</script>
+						</td>
+
+
+
+
+
+						
 					</tr>
 					<tr>
 						<td>Place of birth</td>
-						<td>Kharkiv</td>
+						<td><input type="text" name="placeOfBirth"></td>
 				        <td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Curent Address</td>
-						<td>Moscow</td>
+						<td><input type="text" name="currentAddress"></td>
 						<td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Place of Death</td>
-						<td>_EMPTY_</td>
+						<td><input type="text" name="placeOfDeath"></td>
 			            <td><button>Map</button></td>
 					</tr>
 
@@ -63,14 +92,17 @@
 		<h2><a href="#tab1">Biography</a></h2>
 		
 		<div>
+		<!--	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+			<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> -->
 
-			<h3>Biography</h3>
-			<p>Some simple text about this person</p>
-			<hr>
-		</div>
-		<div>
-			<h3>Test</h3>
-			<table border="1">
+			
+				
+  			<textarea name="editor1" cols="100" rows="auto">
+				<h3>Biography</h3>
+				<p>Some simple text about this person</p>
+				<hr>
+				<h3>Test</h3>
+				<table border="1">
 					<tr>
 						<td>Mother</td>
 						<td>Sidorenko Ann</td>
@@ -92,6 +124,10 @@
 						<td>Oliv</td>
 					</tr>
 				</table>
+  			</textarea>
+  			<script src="http://cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+  			<script>CKEDITOR.replace( 'editor1' );</script>
+  			<br />
 		</div>
 		
 	</section>
@@ -133,10 +169,9 @@
 
 </article>	
 	<div class="EditButtons">
-		<button onclick="myFunction()">Print</button>
-		<script src="scripts/print.js"></script>
-		<button onClick="location.href='personal_page_edit.html'">Edit</button>
+		<input type="submit" value="Save" name="Save">
 		<button>Delete</button>
+		<button onClick="location.href='personal_page.html'">Cancel</button>
 	</div>
 </div>
 </body>
