@@ -1,21 +1,20 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/css-style.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<title>Personal Page - FIO </title>
 	<meta charset="UTF-8"> 
-
-
-
-
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
+	
+	<script src="js/jQuery.js"></script>
+  	<script src="js/helper.js"></script>
 </head>
 <body>
 
 	<div id="header">
-	<h1>Personal Card - <span style="color: red">EDIT</span></h1>
+		<h1>Personal Card - <span style="color: red">EDIT</span></h1>
 	</div>
 
+<form id="personalInfoForm">
 <div>
 	<div class="Photo" style="float:left; padding:50px;">
 		<div><img src="photo/Portret.jpg" alt="Photo" /></div>
@@ -30,16 +29,17 @@
 		<table border="1">
 					<tr>
 						<td>Last Name</td>
-						<td><input type="text" name="lastName"></td>	
+						<td><input type="text" id="lastName"></td>
+						
 
 					</tr>
 					<tr>
 						<td>First Name</td>
-						<td><input type="text" name="firstName"></td>
+						<td><input type="text" id="firstName"></td>
 					</tr>
 					<tr>
 						<td>Middle Name</td>
-						<td><input type="text" name="middleName"></td>
+						<td><input type="text" id="middleName"></td>
 					</tr>
 					<tr>
 						<td>Years</td>
@@ -48,7 +48,7 @@
 								<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   								<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   								<script>$(function() {$( "#datepicker_birth" ).datepicker();});</script>
-  								<input type="text" id="datepicker_birth" value="1850-01-01">
+  								<input type="text" id="datepicker_birth">
 						</td>
 						<td>
   							<script>$(function() {$( "#datepicker_death" ).datepicker();});</script>
@@ -56,26 +56,20 @@
   							<input type="text" id="datepicker_death" >
   							<script>document.getElementById('datepicker_death').value = new Date().toISOString().substring(0, 10);</script>
 						</td>
-
-
-
-
-
-						
 					</tr>
 					<tr>
 						<td>Place of birth</td>
-						<td><input type="text" name="placeOfBirth"></td>
+						<td><input type="text" id="placeOfBirth"></td>
 				        <td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Curent Address</td>
-						<td><input type="text" name="currentAddress"></td>
+						<td><input type="text" id="currentAddress"></td>
 						<td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Place of Death</td>
-						<td><input type="text" name="placeOfDeath"></td>
+						<td><input type="text" id="placeOfDeath"></td>
 			            <td><button>Map</button></td>
 					</tr>
 
@@ -83,7 +77,7 @@
 	</div>
 
 </div>
-
+</form>
 
 <div style="clear:both">
 <article class="tabs">
@@ -168,9 +162,12 @@
 	</section>
 
 </article>	
+
 	<div class="EditButtons">
-		<input type="submit" value="Save" name="Save">
+		<!--<input type="submit" value="Save" name="Save"> -->
 		<button>Delete</button>
+		<button onclick="saveChanges(this.value); location.href='personal_page.html'">Save</button>
+		<script src="scripts/edit.js" type="text/javascript"></script>	
 		<button onClick="location.href='personal_page.html'">Cancel</button>
 	</div>
 </div>
