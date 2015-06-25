@@ -1,34 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" href="css/css-style.css">
+	<link rel="stylesheet" href="css/css-style.css"/>
 	<title>Personal Page - FIO </title>
-	 <meta charset="UTF-8"> 
+	<meta charset="UTF-8"/>  
 </head>
 <body>
 
 	<div id="header">
-	<h1>Personal Card</h1>
+		<h1>Personal Card</h1>
 	</div>
 
 <div>
 	<div class="Photo" style="float:left; padding:50px;">
-		<img src="photo/Portret.jpg" alt="Photo" />
+		<img src="images/Portret.jpg" alt="Photo" />
 	</div>
 
 	<div class="PesronalInfo" style="float:left; padding:50px;">
 		<table border="1">
 					<tr>
 						<td>Last Name</td>
-						<td>Smith</td>	
+						<td><p th:text="${lastName}" /></td>	
 
 					</tr>
 					<tr>
 						<td>First Name</td>
-						<td>Jane</td>
+						<td><p th:text="${firstName}" /></td>
 					</tr>
 					<tr>
 						<td>Middle Name</td>
-						<td>Ivanovna</td>
+						<td><p th:text="${middleName}" /></td>
 					</tr>
 					<tr>
 						<td>Years</td>
@@ -36,17 +37,17 @@
 					</tr>
 					<tr>
 						<td>Place of birth</td>
-						<td>Kharkiv</td>
+						<td><p th:text="${placeOfBirth}" /></td>
 				        <td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Curent Address</td>
-						<td>Moscow</td>
+						<td><p th:text="${currentAddress}" /></td>
 						<td><button>Map</button></td>
 					</tr>
 					<tr>
 						<td>Place of Death</td>
-						<td>_EMPTY_</td>
+						<td><p th:text="${placeOfDeath}" /></td>
 			            <td><button>Map</button></td>
 					</tr>
 
@@ -66,7 +67,7 @@
 
 			<h3>Biography</h3>
 			<p>Some simple text about this person</p>
-			<hr>
+			<hr/>
 		</div>
 		<div>
 			<h3>Test</h3>
@@ -113,14 +114,14 @@
 		<table style="width:194px;">
 			<tr>
 				<td align="center" style="height:194px;background:url(https://www.gstatic.com/pwa/s/v/lighthousefe_20150520.00_p0/transparent_album_background.gif) no-repeat left">
-					<a href="https://picasaweb.google.com/100845380512321282990/bRQnCC?authuser=0&feat=embedwebsite">
-						<img src="https://lh3.googleusercontent.com/-ZwkuJIIfwSk/ThE5aBDLP_E/AAAAAAAAPeU/LpGGXZlmlic/s160-c/bRQnCC.jpg" width="160" height="160" style="margin:1px 0 0 4px;">
+					<a href="">
+						<img src="" width="160" height="160" style="margin:1px 0 0 4px;"/>
 					</a>
 				</td>
 			</tr>
 			<tr>
 				<td style="text-align:center;font-family:arial,sans-serif;font-size:11px">
-					<a href="https://picasaweb.google.com/100845380512321282990/bRQnCC?authuser=0&feat=embedwebsite" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">Ограничиваю доступ к альбомам! Подробнее внутри</a>
+					<a href="" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">Ограничиваю доступ к альбомам! Подробнее внутри</a>
 				</td>
 			</tr>
 		</table>

@@ -1,0 +1,1 @@
+{"firstName":"Anna","middleName":"Igorevna","lastName":"Perova","placeOfBirth":"Kharkiv","currentAddress":"Kirkland","placeOfDeath":null,"yearsOfLife":null}
