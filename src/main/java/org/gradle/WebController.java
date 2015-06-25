@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,21 +20,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 		ObjectMapper mapper = new ObjectMapper();
 		information = json.loadAllRecords(mapper, fileName);
 
-		model.addAttribute("firstName", information.getFirstName());
-		model.addAttribute("lastName", information.getLastName());
-		model.addAttribute("middleName", information.getMiddleName());
-		// ToDo: add attribute for years of life
-		model.addAttribute("placeOfBirth", information.getPlaceOfBirth());
-		model.addAttribute("currentAddress", information.getCurrentAddress());
-		model.addAttribute("placeOfDeath", information.getPlaceOfDeath());
-	}
-
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/personal_page").setViewName(
-				"personal_page");
-		registry.addViewController("/personal_page_edit").setViewName(
-				"personal_page_edit");
+		model.addAttribute("info", information);
 	}
 
 	@RequestMapping(value = "/personal_page", method = RequestMethod.GET)
@@ -45,9 +30,9 @@ public class WebController extends WebMvcConfigurerAdapter {
 	}
 
 	@RequestMapping(value = "/personal_page_edit", method = RequestMethod.GET)
-	public String displayPersonalPageInEditMode(Model model,
-			Information information) {
+	public String displayPersonalPageInEditMode(Model model) {
 		completeHTMLPage(model);
+
 		return "personal_page_edit";
 	}
 
