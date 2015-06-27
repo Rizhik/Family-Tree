@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/css-style.css" />
+<title>Personal Page - FIO</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<div id="header">
+		<h1>Main Page</h1>
+	</div>
+
+
+
+	<div class="EditButtons">
+		<button onClick="location.href='personal_page_edit.html'">Add
+			new person</button>
+		<button>Delete</button>
+	</div>
+
+	<div>
+		<table border="1">
+			<tr>
+
+				<td>File Name</td>
+
+			</tr>
+
+			<tr th:each="card : ${cards}">
+				<td><a href="/personal_page.html"><p th:text="${card.firstName}" /></a></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
