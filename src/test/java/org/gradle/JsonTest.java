@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class JsonTest {
 	ObjectMapper mapper = new ObjectMapper();
 
-	@Test
+	@Test//TODO update the test
 	public void loadAllRecords() {
 		Json json = new Json();
-		Information information = json.loadAllRecords(mapper,
+		Information information = Json.loadAllRecords(mapper,
 				"./src/test/resources/org/gradle/JsonTest_LoadAllRecords.txt");
 		AssertJUnit.assertEquals("Perova", information.getLastName());
 		AssertJUnit.assertEquals("Anna", information.getFirstName());

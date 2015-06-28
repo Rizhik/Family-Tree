@@ -15,11 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class WebController extends WebMvcConfigurerAdapter {
-	// static String fileName;
-	Information information = new Information();
+	ObjectMapper mapper = new ObjectMapper();
 
 	public void completeHTMLPage(Model model, String fileName) {
-		ObjectMapper mapper = new ObjectMapper();
+		Information information = new Information();
 		information = Json.loadAllRecords(mapper, "./user_cards/" + fileName
 				+ ".txt");
 		model.addAttribute("info", information);
@@ -42,7 +41,6 @@ public class WebController extends WebMvcConfigurerAdapter {
 
 	@RequestMapping(value = "/personal_page_add", method = RequestMethod.POST)
 	public String saveNewPersonalCard(Information info) throws IOException {
-		ObjectMapper mapper = new ObjectMapper();
 		String fileName = "./user_cards/" + info.getId() + ".txt";
 		File file = new File(fileName);
 		try {
@@ -70,10 +68,10 @@ public class WebController extends WebMvcConfigurerAdapter {
 	}
 
 	@RequestMapping(value = "/personal_page_edit/{personalCardId}", method = RequestMethod.POST)
-	public String saveChanges(Information information) throws IOException {
-		String fileName = "./user_cards/" + information.getId() + ".txt";
-		ObjectMapper mapper = new ObjectMapper();
+	public String saveChanges(Information information,
+			@PathVariable String personalCardId) throws IOException {
+		String fileName = "./user_cards/" + personalCardId + ".txt";
 		Json.saveRecords(mapper, information, fileName);
-		return "redirect:/personal_page/" + information.getId();
+		return "redirect:/personal_page/" + personalCardId;
 	}
 }
