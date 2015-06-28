@@ -2,4 +2,7 @@
 /bin/
 
 test-output/*
-.gradle/*
+.gradle
+.DS_Store
+src/main/resources/application.properties/
+user_cards/*

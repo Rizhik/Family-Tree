@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" href="css/css-style.css" />
-	<link rel="stylesheet"
-		href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-	<title>Personal Page - FIO</title>
-	<meta charset="UTF-8" />
+<link rel="stylesheet" href="css/css-style.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+<title>Personal Page - FIO</title>
+<meta charset="UTF-8" />
 
-	<script src="js/jQuery.js"></script>
-	<script src="js/helper.js"></script>
+<script src="js/jQuery.js"></script>
+<script src="js/helper.js"></script>
 </head>
 <body>
 
@@ -18,7 +18,8 @@
 		</h1>
 	</div>
 
-	<form id="personalInfoForm" action="#" th:action="@{/personal_page_edit}"  th:object="${info}" method="post">
+	<form id="personalInfoForm" action="#" th:object="${info}"
+		th:action="@{/personal_page_edit/{id}(id=${info.id})}" method="post">
 		<div>
 			<div class="Photo" style="float: left; padding: 50px;">
 				<div>

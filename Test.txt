@@ -1,1 +1,0 @@
-{"firstName":"Anna","middleName":"P1","lastName":"Test","placeOfBirth":"","currentAddress":"","placeOfDeath":"","yearsOfLife":null}

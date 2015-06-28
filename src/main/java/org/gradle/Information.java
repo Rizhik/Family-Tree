@@ -1,5 +1,7 @@
 package org.gradle;
 
+import java.util.UUID;
+
 public class Information {
 	private String firstName;
 	private String middleName;
@@ -8,7 +10,16 @@ public class Information {
 	private String placeOfBirth;
 	private String currentAddress;
 	private String placeOfDeath;
-	
+	private String id;
+
+	public Information() {
+		id = UUID.randomUUID().toString();
+	}
+
+	public String getId() {
+		return id;
+	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

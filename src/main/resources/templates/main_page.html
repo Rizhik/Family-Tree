@@ -14,7 +14,7 @@
 
 
 	<div class="EditButtons">
-		<button onClick="location.href='personal_page_edit.html'">Add
+		<button onClick="location.href='personal_page_add.html'">Add
 			new person</button>
 		<button>Delete</button>
 	</div>
@@ -28,7 +28,11 @@
 			</tr>
 
 			<tr th:each="card : ${cards}">
-				<td><a href="/personal_page.html"><p th:text="${card.firstName}" /></a></td>
+				<td><a th:href="@{/personal_page/{id}(id=${card.id})}">
+
+						<p th:text="${card.firstName}" />
+				</a></td>
+				<td><p th:text="${card.id}" /></td>
 			</tr>
 		</table>
 	</div>
