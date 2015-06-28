@@ -16,7 +16,7 @@ public class Json {
 		try {
 			File file = new File(fileName);
 			if (file.exists()) {
-				//new File(fileName)
+				// new File(fileName)
 				information = mapper.readValue(file, Information.class);
 			}
 		} catch (JsonGenerationException e) {
@@ -31,8 +31,11 @@ public class Json {
 
 	// Save all information from the web page to TXT file in JSON format
 	public static void saveRecords(ObjectMapper mapper,
-			Information information, String fileName) {
+			Information information, String personalCardId) {
+		String fileName = "./user_cards/" + personalCardId + ".txt";
+		information.setId(personalCardId);
 		try {
+
 			mapper.writeValue(new File(fileName), information);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();

@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link rel="stylesheet" href="css/css-style.css" />
-<title>Personal Page - FIO</title>
+<title>Home Page</title>
 <meta charset="UTF-8" />
 </head>
 <body>
 
 	<div id="header">
-		<h1>Main Page</h1>
+		<h1>Home Page - List of all family members</h1>
 	</div>
 
 
@@ -30,7 +30,8 @@
 			<tr th:each="card : ${cards}">
 				<td><a th:href="@{/personal_page/{id}(id=${card.id})}">
 
-						<p th:text="${card.firstName}" />
+						<p
+							th:text="${card.lastName} + ' ' +${card.firstName} + ' ' +${card.middleName}" />
 				</a></td>
 				<td><p th:text="${card.id}" /></td>
 			</tr>
