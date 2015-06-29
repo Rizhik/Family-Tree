@@ -22,16 +22,12 @@
 	<div>
 		<table border="1">
 			<tr>
-
-				<td>File Name</td>
-
+				<td>Person Name</td>
 			</tr>
 
 			<tr th:each="card : ${cards}">
 				<td><a th:href="@{/personal_page/{id}(id=${card.id})}">
-
-						<p
-							th:text="${card.lastName} + ' ' +${card.firstName} + ' ' +${card.middleName}" />
+						<p th:text="${card.lastName} + ' ' +${card.firstName} + ' ' +${card.middleName}" />
 				</a></td>
 				<td><p th:text="${card.id}" /></td>
 			</tr>

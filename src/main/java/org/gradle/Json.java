@@ -16,7 +16,6 @@ public class Json {
 		try {
 			File file = new File(fileName);
 			if (file.exists()) {
-				// new File(fileName)
 				information = mapper.readValue(file, Information.class);
 			}
 		} catch (JsonGenerationException e) {
@@ -35,7 +34,6 @@ public class Json {
 		String fileName = "./user_cards/" + personalCardId + ".txt";
 		information.setId(personalCardId);
 		try {
-
 			mapper.writeValue(new File(fileName), information);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
