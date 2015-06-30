@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<div id="header">
+	<div>
 		<h1>
 			Personal Card - <span style="color: green">ADD</span>
 		</h1>
@@ -57,19 +57,22 @@
 								$(function() {
 									$("#datepicker_birth").datepicker();
 								});
-							</script> <input type="text" id="datepicker_birth" /></td>
+							</script> <input type="text" id="datepicker_birth"
+							th:field="*{dateOfBirth}" /></td>
 						<td><script>
 							$(function() {
 								$("#datepicker_death").datepicker();
 							});
-						</script> <input type="text" id="datepicker_death" /> <script>
-							document.getElementById('datepicker_death').value = new Date()
-									.toISOString().substring(0, 10);
-						</script></td>
+						</script> <input type="text" id="datepicker_death"
+							th:field="*{dateOfDeath}" /> <script>
+								document.getElementById('datepicker_death').value = new Date()
+										.toISOString().substring(0, 10);
+							</script></td>
 					</tr>
 					<tr>
 						<td>Place of birth</td>
-						<td><input type="text" id="placeOfBirth"
+						<td><input type="
+							text" id="placeOfBirth"
 							th:field="*{placeOfBirth}" /></td>
 						<td><button>Map</button></td>
 					</tr>
@@ -196,7 +199,6 @@
 
 			<div class="EditButtons">
 
-				<button>Delete</button>
 				<input type="submit" value="Save" name="Save" />
 				<button onClick="location.href='personal_page.html'">Cancel</button>
 			</div>

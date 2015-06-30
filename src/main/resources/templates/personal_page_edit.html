@@ -12,13 +12,13 @@
 </head>
 <body>
 
-	<div id="header">
+	<div>
 		<h1>
 			Personal Card - <span style="color: yellow">EDIT</span>
 		</h1>
 	</div>
 
-	<form id="personalInfoForm" action="#" th:object="${info}"
+	<form th:object="${info}"
 		th:action="@{/personal_page_edit/{id}(id=${info.id})}" method="post">
 		<div>
 			<div class="Photo" style="float: left; padding: 50px;">
@@ -57,15 +57,17 @@
 								$(function() {
 									$("#datepicker_birth").datepicker();
 								});
-							</script> <input type="text" id="datepicker_birth" /></td>
+							</script> <input type="text" id="datepicker_birth"
+							th:field="*{dateOfBirth}" /></td>
 						<td><script>
 							$(function() {
 								$("#datepicker_death").datepicker();
 							});
-						</script> <input type="text" id="datepicker_death" /> <script>
-							document.getElementById('datepicker_death').value = new Date()
-									.toISOString().substring(0, 10);
-						</script></td>
+						</script> <input type="text" id="datepicker_death"
+							th:field="*{dateOfDeath}" /> <script>
+								document.getElementById('datepicker_death').value = new Date()
+										.toISOString().substring(0, 10);
+							</script></td>
 					</tr>
 					<tr>
 						<td>Place of birth</td>
@@ -74,7 +76,7 @@
 						<td><button>Map</button></td>
 					</tr>
 					<tr>
-						<td>Curent Address</td>
+						<td>Current Address</td>
 						<td><input type="text" id="currentAddress"
 							th:field="*{currentAddress}" /></td>
 						<td><button>Map</button></td>
@@ -193,15 +195,26 @@
 				</section>
 
 			</article>
-
-			<div class="EditButtons">
-
-				<button>Delete</button>
-				<input type="submit" value="Save" name="Save" />
-				<button onClick="location.href='personal_page.html'">Cancel</button>
-			</div>
 		</div>
-
+		<input type="submit" value="Save" name="Save" />
 	</form>
+	<div class="EditButtons">
+			<form th:action="@{/delete/{id}(id=${info.id})}" method="post">
+			<input type="submit" value="Delete" name="Delete" />
+			<script>
+				function deletePerson() {
+					var message = confirm("Do you want to DELETE this family member?");
+					if (message == true) {
+						//txt = "You pressed OK!";
+					}
+				}
+			</script>
+		</form>
+
+		<button onClick="location.href='personal_page.html'">Cancel</button>
+	</div>
+
+
+
 </body>
 </html>

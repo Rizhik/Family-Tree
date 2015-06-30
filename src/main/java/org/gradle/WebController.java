@@ -2,6 +2,8 @@ package org.gradle;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,6 +25,12 @@ public class WebController extends WebMvcConfigurerAdapter {
 				+ fileName + ".txt");
 		model.addAttribute("info", information);
 	}
+	
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/delete").setViewName("main_page");
+    }
+
 
 	@RequestMapping(value = "/main_page", method = RequestMethod.GET)
 	public String displayMainPage(Model model) {
@@ -72,5 +81,15 @@ public class WebController extends WebMvcConfigurerAdapter {
 		ObjectMapper mapper = new ObjectMapper();
 		Json.saveRecords(mapper, information, personalCardId);
 		return "redirect:/personal_page/" + personalCardId;
+	}
+
+	@RequestMapping(value = "/delete/{personalCardId}", method = RequestMethod.POST)
+	public String deletePersonalCard(@PathVariable String personalCardId)
+			throws IOException {
+		String fileName = "./user_cards/" + personalCardId + ".txt";
+		File file = new File(fileName);
+		Path path = file.toPath();
+		Files.deleteIfExists(path);
+		return "redirect:/main_page/";
 	}
 }

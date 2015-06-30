@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<link rel="stylesheet" href="css/css-style.css" />
-<title>Home Page</title>
-<meta charset="UTF-8" />
+	<link rel="stylesheet" href="css/css-style.css" />
+	<title>Home Page</title>
+	<meta charset="UTF-8" />
 </head>
+
 <body>
 
-	<div id="header">
-		<h1>Home Page - List of all family members</h1>
+	<div>
+		<h1>List of all family members</h1>
 	</div>
 
-
-
-	<div class="EditButtons">
-		<button onClick="location.href='personal_page_add.html'">Add
-			new person</button>
-		<button>Delete</button>
+	<div>
+		<a href="/personal_page_add.html"><button>Add new person</button></a>
 	</div>
 
 	<div>
 		<table border="1">
 			<tr>
 				<td>Person Name</td>
+				<td>Year of Birth</td>
+				<td>ID</td>
 			</tr>
 
 			<tr th:each="card : ${cards}">
 				<td><a th:href="@{/personal_page/{id}(id=${card.id})}">
 						<p th:text="${card.lastName} + ' ' +${card.firstName} + ' ' +${card.middleName}" />
 				</a></td>
+				<td><p th:text="${card.dateOfBirth}" /></td>
 				<td><p th:text="${card.id}" /></td>
 			</tr>
 		</table>
 	</div>
 
 </body>
+
 </html>

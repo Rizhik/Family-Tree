@@ -3,14 +3,15 @@ package org.gradle;
 import java.util.UUID;
 
 public class Information {
+	private String id;
+	private String lastName;
 	private String firstName;
 	private String middleName;
-	private String lastName;
-	private String years;
+	private String dateOfBirth;
 	private String placeOfBirth;
 	private String currentAddress;
+	private String dateOfDeath;
 	private String placeOfDeath;
-	private String id;
 
 	public Information() {
 		id = UUID.randomUUID().toString();
@@ -48,12 +49,20 @@ public class Information {
 		return lastName;
 	}
 
-	public void setYearsOfLife(String yearsOfLife) {
-		this.years = yearsOfLife;
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getYearsOfLife() {
-		return years;
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfDeath(String dateOfDeath) {
+		this.dateOfDeath = dateOfDeath;
+	}
+
+	public String getDateOfDeath() {
+		return dateOfDeath;
 	}
 
 	public void setPlaceOfBirth(String placeOfBirth) {

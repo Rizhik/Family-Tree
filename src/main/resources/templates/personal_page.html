@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<div id="header">
+	<div>
 		<h1>Personal Card</h1>
 	</div>
 
@@ -33,7 +33,7 @@
 				</tr>
 				<tr>
 					<td>Years</td>
-					<td>1954-1957</td>
+					<td><p th:text="${info.dateOfBirth}+'-'+${info.dateOfDeath}" /></td>
 				</tr>
 				<tr>
 					<td>Place of birth</td>
@@ -151,7 +151,17 @@
 			<button onclick="myFunction()">Print</button>
 			<script src="scripts/print.js"></script>
 			<a th:href="@{/personal_page_edit/{id}(id=${info.id})}"><button>Edit</button></a>
-			<button>Delete</button>
+			<form th:action="@{/delete/{id}(id=${info.id})}" method="post">
+				<input type="submit" value="Delete" name="Delete" />
+				<script>
+					function deletePerson() {
+						var message = confirm("Do you want to DELETE this family member?");
+						if (message == true) {
+							//txt = "You pressed OK!";
+						}
+					}
+				</script>
+			</form>
 		</div>
 	</div>
 </body>
