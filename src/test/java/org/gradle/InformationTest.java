@@ -53,16 +53,55 @@ public class InformationTest {
 		AssertJUnit.assertEquals("Moscow", result);
 	}
 
-	@Test(enabled = false)
-	public void getYearsOfLife() {
-		throw new RuntimeException("Test not implemented");
+	@Test
+	public void getDateOfBirth() {
+		Information information = new Information();
+		information.setDateOfBirth("24-11-1945");
+		String result = information.getDateOfBirth();
+		AssertJUnit.assertEquals("24-11-1945", result);
+	}
+
+	@Test
+	public void getDateOfDeath() {
+		Information information = new Information();
+		information.setDateOfDeath("24-11-1948");
+		String result = information.getDateOfDeath();
+		AssertJUnit.assertEquals("24-11-1948", result);
+	}
+
+	@Test
+	public void getId() {
+		Information information = new Information();
+		AssertJUnit.assertNotNull(information.getId());
+	}
+
+	@Test
+	public void setId() {
+		Information information = new Information();
+		information.setId("1234567890");
+		AssertJUnit.assertEquals("1234567890", information.getId());
+	}
+
+	@Test
+	public void setDateOfDeath() {
+		Information information = new Information();
+		information.setDateOfDeath("7-03-1964");
+		AssertJUnit.assertEquals("7-03-1964", information.getDateOfDeath());
+	}
+
+	@Test
+	public void setDateOfBirth() {
+		Information information = new Information();
+		information.setDateOfBirth("17-04-1976");
+		AssertJUnit.assertEquals("17-04-1976", information.getDateOfBirth());
 	}
 
 	@Test
 	public void setCurrentAddress() {
 		Information information = new Information();
 		information.setCurrentAddress("CurrentAddress");
-		AssertJUnit.assertEquals("CurrentAddress", information.getCurrentAddress());
+		AssertJUnit.assertEquals("CurrentAddress",
+				information.getCurrentAddress());
 	}
 
 	@Test

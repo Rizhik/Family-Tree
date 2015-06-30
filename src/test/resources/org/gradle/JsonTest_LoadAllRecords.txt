@@ -1,1 +1,1 @@
-{"firstName":"Anna","middleName":"Igorevna","lastName":"Perova","placeOfBirth":"Kharkiv","currentAddress":"Kirkland","placeOfDeath":null,"yearsOfLife":null}
+{"id":"c80eeb1f-0372-4317-a23c-f152a2b3e3bf","lastName":"Ivanova","firstName":"Irina","middleName":"Vasilievna","dateOfBirth":"17-7-1954","placeOfBirth":"Kharkiv","currentAddress":"Kirkland","dateOfDeath":"29-8-2011","placeOfDeath":"Riga"}

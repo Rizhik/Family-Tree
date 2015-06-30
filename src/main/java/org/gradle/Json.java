@@ -30,8 +30,8 @@ public class Json {
 
 	// Save all information from the web page to TXT file in JSON format
 	public static void saveRecords(ObjectMapper mapper,
-			Information information, String personalCardId) {
-		String fileName = "./user_cards/" + personalCardId + ".txt";
+			Information information, String personalCardId, String folderName) {
+		String fileName = folderName + personalCardId + ".txt";
 		information.setId(personalCardId);
 		try {
 			mapper.writeValue(new File(fileName), information);

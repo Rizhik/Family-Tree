@@ -25,17 +25,17 @@ public class WebController extends WebMvcConfigurerAdapter {
 				+ fileName + ".txt");
 		model.addAttribute("info", information);
 	}
-	
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/delete").setViewName("main_page");
-    }
 
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/delete").setViewName("main_page");
+	}
 
 	@RequestMapping(value = "/main_page", method = RequestMethod.GET)
 	public String displayMainPage(Model model) {
 		PersonViewer cv = new PersonViewer();
-		ArrayList<Information> people = cv.getListOfFamilyMembers();
+		ArrayList<Information> people = cv
+				.getListOfFamilyMembers("./user_cards");
 		model.addAttribute("cards", people);
 		return "main_page";
 	}
@@ -57,7 +57,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Json.saveRecords(mapper, info, info.getId());
+		Json.saveRecords(mapper, info, info.getId(), "./user_cards/");
 		return "redirect:/personal_page/" + info.getId();
 	}
 
@@ -79,7 +79,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 	public String saveChanges(Information information,
 			@PathVariable String personalCardId) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		Json.saveRecords(mapper, information, personalCardId);
+		Json.saveRecords(mapper, information, personalCardId, "./user_cards/");
 		return "redirect:/personal_page/" + personalCardId;
 	}
 
