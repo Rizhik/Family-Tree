@@ -35,13 +35,13 @@ public class JsonTest {
 		info_init.setDateOfBirth("17-7-1954");
 		info_init.setDateOfDeath("29-8-2011");
 
-		String fileName = "./src/test/resources/org/gradle/JsonTest_SaveRecords.txt";
-
-		Json.saveRecords(mapper, info_init, fileName,"");
+		Json.saveRecords(mapper, info_init, "JsonTest_SaveRecords",
+				"./src/test/resources/org/gradle/");
 
 		Information info_result = new Information();
 		String info_result_ID = info_result.getId();
-		info_result = Json.loadAllRecords(mapper, fileName);
+		info_result = Json.loadAllRecords(mapper,
+				"./src/test/resources/org/gradle/JsonTest_SaveRecords.txt");
 
 		AssertJUnit.assertEquals(info_init.getLastName(),
 				info_result.getLastName());

@@ -1,1 +1,1 @@
-{"id":"c80eeb1f-0372-4317-a23c-f152a2b3e3bf","lastName":"Samuel","firstName":"Alex","middleName":"Ivan","dateOfBirth":"17-7-1954","placeOfBirth":"New York","currentAddress":null,"dateOfDeath":"29-8-2011","placeOfDeath":"Chicago"}
+{"id":"JsonTest_SaveRecords","lastName":"Samuel","firstName":"Alex","middleName":"Ivan","dateOfBirth":"17-7-1954","placeOfBirth":"New York","currentAddress":null,"dateOfDeath":"29-8-2011","placeOfDeath":"Chicago"}

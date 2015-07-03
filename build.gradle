@@ -31,7 +31,12 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.hibernate:hibernate-validator")
     compile("org.apache.tomcat.embed:tomcat-embed-el")
-    testCompile ("org.testng:testng:6.9.4")
+    
+    testCompile ("org.testng:testng:6.9.4") 
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '2.46.0'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '2.46.0'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.46.0'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '2.46.0'
 }
 
 test {

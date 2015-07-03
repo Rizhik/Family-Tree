@@ -1,1 +1,0 @@
-{"id":"./src/test/resources/org/gradle/JsonTest_SaveRecords.txt","lastName":"Samuel","firstName":"Alex","middleName":"Ivan","dateOfBirth":"17-7-1954","placeOfBirth":"New York","currentAddress":null,"dateOfDeath":"29-8-2011","placeOfDeath":"Chicago"}
