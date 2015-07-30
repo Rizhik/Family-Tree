@@ -21,8 +21,8 @@ public class WebController extends WebMvcConfigurerAdapter {
 
 	public void completeHTMLPage(Model model, String fileName) {
 		ObjectMapper mapper = new ObjectMapper();
-		Information information = Json.loadAllRecords(mapper, "./user_cards/"
-				+ fileName + ".txt");
+		Information information = Json.loadAllRecords(mapper, fileName,
+				"./user_cards/");
 		model.addAttribute("info", information);
 	}
 
@@ -35,7 +35,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 	public String displayMainPage(Model model) {
 		PersonViewer cv = new PersonViewer();
 		ArrayList<Information> people = cv
-				.getListOfFamilyMembers("./user_cards");
+				.getListOfFamilyMembers("./user_cards/");
 		model.addAttribute("cards", people);
 		return "main_page";
 	}

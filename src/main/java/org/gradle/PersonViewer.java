@@ -41,8 +41,7 @@ public class PersonViewer {
 		ArrayList<Information> allPeople = new ArrayList<Information>();
 		ObjectMapper mapper = new ObjectMapper();
 		for (int index = 0; index < files.size(); index++) {
-			String fileName = folderName + files.get(index) + ".txt";
-			Information currentPerson = Json.loadAllRecords(mapper, fileName);
+			Information currentPerson = Json.loadAllRecords(mapper, files.get(index), folderName);
 			allPeople.add(currentPerson);
 		}
 		return allPeople;

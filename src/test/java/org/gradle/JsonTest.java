@@ -11,7 +11,7 @@ public class JsonTest {
 	@Test
 	public void loadAllRecords() {
 		Information information = Json.loadAllRecords(mapper,
-				"./src/test/resources/org/gradle/JsonTest_LoadAllRecords.txt");
+				"c80eeb1f-0372-4317-a23c-f152a2b3e3bf", "./src/test/resources/org/gradle/");
 		AssertJUnit.assertEquals("Ivanova", information.getLastName());
 		AssertJUnit.assertEquals("Irina", information.getFirstName());
 		AssertJUnit.assertEquals("Vasilievna", information.getMiddleName());
@@ -41,7 +41,7 @@ public class JsonTest {
 		Information info_result = new Information();
 		String info_result_ID = info_result.getId();
 		info_result = Json.loadAllRecords(mapper,
-				"./src/test/resources/org/gradle/JsonTest_SaveRecords.txt");
+				"JsonTest_SaveRecords","./src/test/resources/org/gradle/");
 
 		AssertJUnit.assertEquals(info_init.getLastName(),
 				info_result.getLastName());

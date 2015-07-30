@@ -11,8 +11,10 @@ public class Json {
 	// Read all JSON data from TXT file and put them to Information object and
 	// return this object
 	public static Information loadAllRecords(ObjectMapper mapper,
-			String fileName) {
+			String personalCardId, String folderName) {
+		String fileName = folderName + personalCardId + ".txt";
 		Information information = new Information();
+		information.setId(personalCardId);
 		try {
 			File file = new File(fileName);
 			if (file.exists()) {
